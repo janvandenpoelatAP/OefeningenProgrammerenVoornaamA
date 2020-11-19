@@ -22,6 +22,19 @@ namespace OefeningenProgrammeren
             H02.Gemiddelde();
             H02.Maaltafels();
             H02.Ruimte();
+
+            // Hoofdstuk H03
+            H03.Maaltafels();
+            H03.Ruimte();
+            H03.BerekenenBtw();
+            H03.LeetSpeak_1();
+            H03.LeetSpeak_2();
+            H03.Instructie_1();
+            H03.Instructie_2();
+            H03.Lotto_1();
+            H03.Lotto_2();
+            H03.SuperLotto_1();
+            H03.SuperLotto_2();
         }
     }
 }
