@@ -48,7 +48,8 @@ namespace OefeningenProgrammeren
 1 - Hoofdstuk 1
 2 - Hoofdstuk 2
 3 - Hoofdstuk 3
-4 - Hoofdstuk 4");
+4 - Hoofdstuk 4
+5 - Hoofdstuk 5");
             Console.WriteLine();
             keuze = Console.ReadLine();
             Console.Clear();
@@ -68,8 +69,11 @@ namespace OefeningenProgrammeren
             {
                 H04.Keuzemenu();
             }
+            if (keuze == "5")
+            {
+                H05.Keuzemenu();
+            }
         }
-
     }
 }
 

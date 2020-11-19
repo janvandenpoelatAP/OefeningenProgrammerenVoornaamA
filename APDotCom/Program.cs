@@ -9,6 +9,7 @@ namespace APDotCom
             Bestel();
             BestelMetVraagEnAanbod_1();
             BestelMetVraagEnAanbod_2();
+            BestelConditioneel();
         }
 
         static public void Bestel()
@@ -164,7 +165,120 @@ namespace APDotCom
             Console.WriteLine($"KORTING: {korting}%");
             Console.WriteLine($"TOTAAL VOOR KORTING: {totaalVoorKorting:F2}");
             Console.WriteLine($"TOTAAL NA KORTING: {totaalNaKorting:F2}");
+        }
+        public static void BestelConditioneel()
+        {
+            Console.WriteLine("Prijs van een boek?");
+            double priceBook = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Prijs van een CD?");
+            double priceCD = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Prijs van een servies?");
+            double priceTableware = Convert.ToDouble(Console.ReadLine());
+            Console.WriteLine("Prijs van een springkasteel?");
+            double priceBouncyCastle = Convert.ToDouble(Console.ReadLine());
 
+            Console.WriteLine("Aantal boeken?");
+            int countBooks = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Aantal CD's?");
+            int countCDs = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Aantal serviezen?");
+            int countTablewares = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Aantal springkastelen?");
+            int countBouncyCastles = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Percentage korting?");
+            int discount = Convert.ToInt32(Console.ReadLine());
+            if (discount > 30)
+            {
+                Console.WriteLine("Waarschuwing: het ingevoerde percentage is hoog!");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Worden prijsstijgingen en -dalingen toegepast? (J/N)");
+            string choice = Console.ReadLine();
+
+            Random r = new Random();
+            double total = 0.0;
+            int priceChangeBook = 0, priceChangeCD = 0, priceChangeTableware = 0, priceChangeBouncyCastle = 0;
+
+            Console.WriteLine();
+            Console.WriteLine("Uw kasticket");
+            Console.WriteLine("------------");
+
+            if (choice == "J")
+            {
+                //Bereken de prijswijziging voor boeken
+                priceChangeBook = r.Next(-50, 50);
+                Console.Write("vraag en aanbod boeken: ");
+                if (priceChangeBook > 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else if (priceChangeBook < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                Console.WriteLine($"{priceChangeBook}%");
+                Console.ResetColor();
+
+                //Bereken de prijswijziging voor CD's
+                priceChangeCD = r.Next(-50, 50);
+                Console.Write("vraag en aanbod CD's: ");
+                if (priceChangeCD > 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else if (priceChangeCD < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                Console.WriteLine($"{priceChangeCD}%");
+                Console.ResetColor();
+
+                //Bereken de prijswijziging voor servies
+                priceChangeTableware = r.Next(-50, 50);
+                Console.Write("vraag en aanbod serviezen: ");
+                if (priceChangeTableware > 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else if (priceChangeTableware < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                Console.WriteLine($"{priceChangeTableware}%");
+                Console.ResetColor();
+
+                //Bereken de prijswijziging voor springkastelen
+                priceChangeBouncyCastle = r.Next(-50, 50);
+                Console.Write("vraag en aanbod springkastelen: ");
+                if (priceChangeBouncyCastle > 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+                else if (priceChangeBouncyCastle < 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.Green;
+                }
+                Console.WriteLine($"{priceChangeBouncyCastle}%");
+                Console.ResetColor();
+            }
+
+            double totalBooks = countBooks * priceBook * (100 + priceChangeBook) / 100d;
+            total += totalBooks;
+            Console.WriteLine($"boek x {countBooks}: {totalBooks:F2}");
+            double totalCDs = countCDs * priceCD * (100 + priceChangeCD) / 100d;
+            total += totalCDs;
+            Console.WriteLine($"CD x {countCDs}: {totalCDs:F2}");
+            double totalTablewares = countTablewares * priceTableware * (100 + priceChangeTableware) / 100d;
+            total += totalTablewares;
+            Console.WriteLine($"servies x {countTablewares}: {totalTablewares:F2}");
+            double totalBouncyCastles = countBouncyCastles * priceBouncyCastle * (100 + priceChangeBouncyCastle) / 100d;
+            total += totalBouncyCastles;
+            Console.WriteLine($"springkasteel x {countBouncyCastles}: {totalBouncyCastles:F2}");
+            Console.WriteLine($"KORTING: {discount}%");
+            Console.WriteLine($"TOTAAL VOOR KORTING: {total:F2}");
+            Console.WriteLine($"KORTING: {total * (100 - discount) / 100d:F2}");
         }
     } 
 }
