@@ -6,6 +6,69 @@ namespace OefeningenProgrammeren
 {
     class H03
     {
+        static public void Keuzemenu()
+        {
+            Console.WriteLine(@"Kies uit de volgende methodes door een cijfer in te geven
+1 - Maaltafels
+2 - Ruimte
+3 - BerekenenBtw
+4 - LeetSpeak_1
+5 - Instructies_1
+6 - Lotto_1
+7 - Superlotto_1
+A - LeetSpeak_2
+B - Instructies_2
+C - Lotto_2
+D - Superlotto_2");
+            Console.WriteLine();
+            string keuze = Console.ReadLine();
+            Console.Clear();
+            if (keuze == "1")
+            {
+                Maaltafels();
+            }
+            if (keuze == "2")
+            {
+                Ruimte();
+            }
+            if (keuze == "3")
+            {
+                BerekenenBtw();
+            }
+            if (keuze == "4")
+            {
+                LeetSpeak_1();
+            }
+            if (keuze == "5")
+            {
+                Instructie_1();
+            }
+            if (keuze == "6")
+            {
+                Lotto_1();
+            }
+            if (keuze == "7")
+            {
+                SuperLotto_1();
+            }
+            if (keuze == "A")
+            {
+                LeetSpeak_2();
+            }
+            if (keuze == "B")
+            {
+                Instructie_2();
+            }
+            if (keuze == "C")
+            {
+                Lotto_2();
+            }
+            if (keuze == "D")
+            {
+                SuperLotto_2();
+            }
+        }
+
         static public void Maaltafels()
         {
             int baseNumber = 411;

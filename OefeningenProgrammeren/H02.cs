@@ -6,6 +6,59 @@ namespace OefeningenProgrammeren
 {
     class H02
     {
+        static public void Keuzemenu()
+        {
+            Console.WriteLine(@"Kies uit de volgende methodes door een cijfer in te geven
+1 - VariabelenHoofdletters
+2 - Optellen_1
+3 - VerbruikWagen_1
+4 - BeetjeWiskunde
+5 - Gemiddelde
+6 - Maaltafels
+7 - Ruimte
+A - Optellen_2
+B - VerbruikWagen_2");
+
+            Console.WriteLine();
+            string keuze = Console.ReadLine();
+            Console.Clear();
+            if (keuze == "1")
+            {
+                VariabelenHoofdletters();
+            }
+            if (keuze == "2")
+            {
+                Optellen_1();
+            }
+            if (keuze == "3")
+            {
+                VerbruikWagen_1();
+            }
+            if (keuze == "4")
+            {
+                BeetjeWiskunde();
+            }
+            if (keuze == "5")
+            {
+                Gemiddelde();
+            }
+            if (keuze == "6")
+            {
+                Maaltafels();
+            }
+            if (keuze == "7")
+            {
+                Ruimte();
+            }
+            if (keuze == "A")
+            {
+                Optellen_2();
+            }
+            if (keuze == "B")
+            {
+                VerbruikWagen_2();
+            }
+        }
         static public void VariabelenHoofdletters()
         {
             // Schrijf de volgende vraag in de console.

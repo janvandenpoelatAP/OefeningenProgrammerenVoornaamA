@@ -7,6 +7,34 @@ namespace OefeningenProgrammeren
 {
     class H01
     {
+        static public void Keuzemenu()
+        {
+            Console.WriteLine(@"Kies uit de volgende methodes door een cijfer in te geven
+1 - MijnEersteProgramma
+2 - ZegGoedendag
+3 - RommelZin
+4 - GekleurdeRommzelZin");
+            Console.WriteLine();
+            string keuze = Console.ReadLine();
+            Console.Clear();
+            if (keuze == "1")
+            {
+                MijnEersteProgramma();
+            }
+            if (keuze == "2")
+            {
+                ZegGoedendag();
+            }
+            if (keuze == "3")
+            {
+                RommelZin();
+            }
+            if (keuze == "4")
+            {
+                GekleurdeRommelzin();
+            }
+        }
+
         static public void MijnEersteProgramma()
         {
             Console.WriteLine("Dit is mijn eerste C# programma");

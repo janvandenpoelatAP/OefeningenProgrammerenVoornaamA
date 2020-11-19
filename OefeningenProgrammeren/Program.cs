@@ -6,6 +6,8 @@ namespace OefeningenProgrammeren
     {
         static void Main(string[] args)
         {
+            /*
+
             // Door ondertsaande regelsal dan niet in commentaar te zetten kies je welke methode wordt uitgevoerd
             // Hoofdstuk H01
             H01.MijnEersteProgramma();
@@ -35,6 +37,39 @@ namespace OefeningenProgrammeren
             H03.Lotto_2();
             H03.SuperLotto_1();
             H03.SuperLotto_2();
+            */
+            Hoofdmenu();
         }
+
+        static void Hoofdmenu()
+        {
+            string keuze;
+            Console.WriteLine(@"Kies uit de volgende klasse door een cijfer in te geven
+1 - Hoofdstuk 1
+2 - Hoofdstuk 2
+3 - Hoofdstuk 3
+4 - Hoofdstuk 4");
+            Console.WriteLine();
+            keuze = Console.ReadLine();
+            Console.Clear();
+            if (keuze == "1")
+            {
+                H01.Keuzemenu();
+            }
+            if (keuze == "2")
+            {
+                H02.Keuzemenu();
+            }
+            if (keuze == "3")
+            {
+                H03.Keuzemenu();
+            }
+            if (keuze == "4")
+            {
+                H04.Keuzemenu();
+            }
+        }
+
     }
 }
+
